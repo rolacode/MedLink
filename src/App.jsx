@@ -1,16 +1,24 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ResetPassword from "./pages/ResetPassword.jsx";
+import NotFound from "./pages/NotFound";
+import Signup from "./pages/Auth/Signup";
+import Login from "./pages/Auth/Login";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ResetPassword from "./pages/Auth/ResetPassword.jsx";
 
 
 const App = () => {
   return (
     <div>
       <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFound />} />
+        {/* Auth */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
       </Routes>
     </div>
   );
