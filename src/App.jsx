@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import Signup from "./pages/Auth/Signup";
 import Login from "./pages/Auth/Login";
-import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import ResetPassword from "./pages/Auth/ResetPassword.jsx";
 
 

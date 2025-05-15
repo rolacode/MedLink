@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../api/Axios"; // Adjust the import path as needed
+import API from "../../api/axios"; // Adjust path if needed
 
-const ResetPassword = () => {
-  const { token } = useParams();
+const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,21 +12,12 @@ const ResetPassword = () => {
     setMessage("");
     setError("");
 
-    if (newPassword !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
     try {
       setLoading(true);
-      const response = await API.post(`/reset-password/${token}`, {
-        email,
-        newPassword,
-      });
-
-      setMessage(response.data.message || "Password reset successful.");
+      const response = await API.post("/forgot-password", { email });
+      setMessage(response.data.message || "Reset link sent to your email.");
     } catch (err) {
-      setError(err.response?.data?.error || "Something went wrong.");
+      setError(err.response?.data?.error || "Error sending reset email.");
     } finally {
       setLoading(false);
     }
@@ -44,12 +31,13 @@ const ResetPassword = () => {
       {/* Content */}
       <div className="bg-white z-50 shadow-md rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center mb-2 text-[#00418C]">
-          Reset Password
+          Forgot Password
         </h2>
         <p className="text-center mb-8 text-[#00418C]">
-          Reset your password below to regain access to your account. Choose a
-          strong password to keep your account secure.
+          Enter your registered email address below, and we’ll send you a link
+          to reset your password.
         </p>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
@@ -59,31 +47,14 @@ const ResetPassword = () => {
             required
             className="w-full pl-10 p-2 border border-gray-300 rounded-md focus:ring focus:ring-[#00418C] focus:outline-none"
           />
-          <input
-            type="password"
-            placeholder="New Password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            required
-            className="w-full pl-10 p-2 border border-gray-300 rounded-md focus:ring focus:ring-[#00418C] focus:outline-none"
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            className="w-full pl-10 p-2 border border-gray-300 rounded-md focus:ring focus:ring-[#00418C] focus:outline-none"
-          />
           <button
             type="submit"
             disabled={loading}
             className="w-full bg-[#00418C] mt-8 text-white py-3 rounded-md hover:bg-[#00418C]/90 transition cursor-pointer"
           >
-            {loading ? "Resetting..." : "Reset Password"}
+            {loading ? "Sending..." : "Send Reset Link"}
           </button>
         </form>
-
         {message && (
           <p className="text-green-600 text-center mt-4">{message}</p>
         )}
@@ -93,4 +64,4 @@ const ResetPassword = () => {
   );
 };
 
-export default ResetPassword;
+export default ForgotPassword;
