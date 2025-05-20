@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import HeroImage from "../assets/images/hero.jpg"; 
 import Hero from "../components/Hero";
 import Services from "../components/Services";
+import Doctors from "../components/Doctors";
 
 
 const HomePage = () => {
@@ -22,6 +23,7 @@ const HomePage = () => {
       <main className="relative z-20 flex flex-col justify-center h-full">
         <Hero />
         <Services />
+        <Doctors />
         <Footer />
       </main>
     </div>
