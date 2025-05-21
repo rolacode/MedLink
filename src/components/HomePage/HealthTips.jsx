@@ -1,7 +1,5 @@
-import assets from "../assets/images/assets";
+import assets from "../../assets/images/assets";
 import HealthTipCard from "./HealthTipCard";
-
-
 
 const tips = [
   {

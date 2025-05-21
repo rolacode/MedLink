@@ -1,5 +1,5 @@
 import ServiceCard from "./SeviceCard";
-import assets from "../assets/images/assets"
+import assets from "../../assets/images/assets"
 import { MdOutlinePsychology } from "react-icons/md";
 import { FaHeartbeat, FaTooth, FaEye } from "react-icons/fa";
 

@@ -1,5 +1,5 @@
 import DoctorCard from "./DoctorCard";
-import assets from "../assets/images/assets";
+import assets from "../../assets/images/assets";
 
 const doctors = [
   {
@@ -25,7 +25,7 @@ const doctors = [
   {
     name: "Dr Triyne Kesakov",
     specialty: "Rheumatologist",
-    image:  assets.Doctor5Img,
+    image: assets.Doctor5Img,
   },
   {
     name: "Dr Jane Doe",
