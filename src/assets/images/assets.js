@@ -10,6 +10,9 @@ import Doctor3Img from './doctor3.png'
 import Doctor4Img from './doctor4.png'
 import Doctor5Img from './doctor5.png'
 import Doctor6Img from './doctor6.png'
+import Tips1Img from './tips1.png'
+import Tips2Img from './tips2.png'
+import Tips3Img from './tips3.png'
 
 
 
@@ -26,8 +29,9 @@ const assets = {
   Doctor4Img,
   Doctor5Img,
   Doctor6Img,
-
-
+  Tips1Img,
+  Tips2Img,
+  Tips3Img,
 }
 
 export default assets
