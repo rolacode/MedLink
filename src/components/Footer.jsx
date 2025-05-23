@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#061492] text-white px-4 lg:px-6 py-10">
+    <footer className="bg-[#00418C] text-white px-4 lg:px-6 py-10">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row space-y-10 lg:space-y-0 justify-between">
         {/* About MedLink */}
         <div className="w-full lg:w-[35%]">

@@ -65,15 +65,19 @@ const Login = () => {
 
   return (
     <div className="relative w-full bg-blue overflow-hidden font-sans">
-      <div className="absolute inset-0 bg-white bg-opacity-30 z-10 mix-blend-overlay" />
       <Header />
       <main className="relative z-20 flex flex-col justify-center h-full">
         <div className="lg:flex h-[500px] lg:h-[100%]">
           <div className="hidden lg:block lg:w-[50%]">
             <img
-              src={assets.ResetPasswordmage}
+              src={
+                userType === "patient"
+                  ? assets.PatientSignUpImage
+                  : assets.LoginImage
+              }
               alt="Doctors"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out transform "
+              loading="lazy"
             />
           </div>
           {/* Content */}
@@ -243,8 +247,8 @@ const Login = () => {
             </form>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };
