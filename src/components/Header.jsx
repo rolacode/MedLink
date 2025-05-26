@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SearchIcon from "../assets/icons/search.svg";
+import { CiSearch } from "react-icons/ci";
 
 const Header = () => (
   <header className="relative z-20 w-full bg-[#9CA6AF40] px-6 py-4 flex justify-between items-center">
@@ -28,7 +28,7 @@ const Header = () => (
     {/* Action Buttons */}
     <div className="flex items-center gap-4">
       <button aria-label="Search" className="text-black text-xl">
-        <img src={SearchIcon} alt="Search" className="w-6 h-6 cursor-pointer" />
+        <CiSearch className="w-6 h-6 cursor-pointer" />
       </button>
       <Link to={"/login"}>
         <button className="bg-[#061492] hover:bg-[#061492]/90 cursor-pointer text-white px-6 py-2 rounded-full font-semibold">
