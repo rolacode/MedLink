@@ -9,12 +9,12 @@ import Login from "./pages/Auth/Login";
 import AppointmentForm from "./components/AppointmentForm.jsx";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import ResetPassword from "./pages/Auth/ResetPassword.jsx";
-// import DoctorDashboard from "./pages/DoctorDashboard.jsx";
 import PrivateRoute from "./routes/allRoutes.jsx";
 import ChatRoom from "./pages/ChatRoom.jsx";
 import { UserProvider } from './context/UserContext';
 import DoctorDashboard from "./pages/Doctor/DoctorDashboard.jsx";
 import AppointmentPage from "./components/Doctor/Apointment/AppointmentPage.jsx";
+import PatientDashboard from "./pages/Patient/PatientDashboard.jsx";
 
 const App = () => {
   const navigate = useNavigate();
@@ -46,6 +46,9 @@ const App = () => {
         <Route path="/doctor/appointments" element={<AppointmentPage />} />
         <Route path="/dashboard" element={<PrivateRoute><DoctorDashboard /></PrivateRoute>} />
         <Route path="/chat/:recipientId" element={<PrivateRoute><ChatRoom /></PrivateRoute>} />
+
+        {/* Patient Routes */}
+        <Route path="/patient-dashboard" element={<PatientDashboard/>} />
       </Routes>
     </UserProvider>
   );
