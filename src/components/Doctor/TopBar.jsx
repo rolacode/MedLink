@@ -139,8 +139,8 @@ const TopBar = ({ toggleSidebar }) => {
           </p>
         </div>
 
-        <div className="lg:flex items-center gap-8 hidden">
-          <div className="border-[1.5px] border-[#868686] flex items-center rounded-3xl w-[345px] h-[35px] px-2 space-x-1 mr-10">
+        <div className="hidden lg:block">
+          <div className="border-[1.5px] border-[#868686] flex items-center rounded-3xl w-[400px] h-[35px] px-2 space-x-1 mr-10">
             <p className="text-[#656565] w-5 h-5">{icons.search}</p>
             <input
               autoComplete="off"
@@ -149,7 +149,9 @@ const TopBar = ({ toggleSidebar }) => {
               className="outline-none bg-transparent placeholder:text-[#656565] grow text-[12px] font-inter"
             />
           </div>
+        </div>
 
+        <div className="lg:flex items-center gap-8 hidden">
           <div className="flex items-center gap-4">
             <p className="cursor-pointer">{icons.notification}</p>
             <p className="cursor-pointer">{icons.questionMark}</p>

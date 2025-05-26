@@ -14,6 +14,7 @@ import PrivateRoute from "./routes/allRoutes.jsx";
 import ChatRoom from "./pages/ChatRoom.jsx";
 import { UserProvider } from './context/UserContext';
 import DoctorDashboard from "./pages/Doctor/DoctorDashboard.jsx";
+import AppointmentPage from "./components/Doctor/Apointment/AppointmentPage.jsx";
 
 const App = () => {
   const navigate = useNavigate();
@@ -32,13 +33,17 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
+
+        {/* Authentication Routes */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/book-appointment" element={<AppointmentForm />} />
-        {/* <Route path="/doctor-dashboard" element={<DoctorDashboard />} /> */}
+
+        {/* Doctor Routes */}
         <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+        <Route path="/doctor/appointments" element={<AppointmentPage />} />
         <Route path="/dashboard" element={<PrivateRoute><DoctorDashboard /></PrivateRoute>} />
         <Route path="/chat/:recipientId" element={<PrivateRoute><ChatRoom /></PrivateRoute>} />
       </Routes>

@@ -84,7 +84,7 @@ const PatientSummary = () => {
               <Tooltip content={<CustomTooltip />} />
             </PieChart>
           </ResponsiveContainer>
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
             <span className="text-xl font-bold text-gray-800">100%</span>
           </div>
         </div>
